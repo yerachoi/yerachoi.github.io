@@ -1,5 +1,5 @@
 ---
-title: "On Gilovich's "How We Know What Isn't So""
+title: "On Gilovich's \"How We Know What Isn't So\""
 date: '2020-07-17T12:00:00.000Z'
 template: 'post'
 language: 'en'
