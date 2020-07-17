@@ -8,7 +8,7 @@ slug: "posts/how-we-know-what-isnt-so/ko"
 link: "posts/how-we-know-what-isnt-so"
 category: "읽기"
 tags:
-  - "길로비치'
+  - "길로비치"
   - "인간 그 속기 쉬운 동물"
   - "과학"
   - "잘못된 믿음"
