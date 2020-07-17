@@ -50,15 +50,15 @@ module.exports = async (graphql, actions) => {
     }
   });
 
-  // ja
-  const resultJa = await graphql(`
+  // ko
+  const resultKo = await graphql(`
     {
       allMarkdownRemark(
         filter: {
           frontmatter: {
             template: { eq: "post" }
             draft: { ne: true }
-            language: { eq: "ja" }
+            language: { eq: "ko" }
           }
         }
       ) {
@@ -70,13 +70,13 @@ module.exports = async (graphql, actions) => {
     }
   `);
 
-  _.each(resultJa.data.allMarkdownRemark.group, category => {
+  _.each(resultKo.data.allMarkdownRemark.group, category => {
     const numPages = Math.ceil(category.totalCount / postsPerPage);
     const categorySlug = `/category/${_.kebabCase(category.fieldValue)}`;
 
     for (let i = 0; i < numPages; i += 1) {
       createPage({
-        path: i === 0 ? categorySlug + '/ja' : `${categorySlug}/page/${i}/ja`,
+        path: i === 0 ? categorySlug + '/ko' : `${categorySlug}/page/${i}/ko`,
         component: path.resolve('./src/templates/category-template.js'),
         context: {
           category: category.fieldValue,
@@ -84,11 +84,11 @@ module.exports = async (graphql, actions) => {
           postsLimit: postsPerPage,
           postsOffset: i * postsPerPage,
           prevPagePath:
-            i <= 1 ? categorySlug + '/ja' : `${categorySlug}/page/${i - 1}/ja`,
-          nextPagePath: `${categorySlug}/page/${i + 1}/ja`,
+            i <= 1 ? categorySlug + '/ko' : `${categorySlug}/page/${i - 1}/ko`,
+          nextPagePath: `${categorySlug}/page/${i + 1}/ko`,
           hasPrevPage: i !== 0,
           hasNextPage: i !== numPages - 1,
-          language: 'ja'
+          language: 'ko'
         }
       });
     }

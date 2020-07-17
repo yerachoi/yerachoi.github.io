@@ -17,8 +17,9 @@ const Author = ({ language }) => {
           <div className={styles['author']}>
             <div className={styles['author__title']}>
               <strong>{author.name[language]}</strong>
-              {['github', 'linkedin', 'twitter'].map(name =>
-                !author.contacts[name] ? null : (
+              {/* {['github', 'linkedin', 'twitter'].map(name => */}
+              {['github'].map(name =>
+              !author.contacts[name] ? null : (
                   <span
                     className={styles['author__title__contacts-item']}
                     key={name}
@@ -40,7 +41,7 @@ const Author = ({ language }) => {
             </div>
             <div className={styles['author__bio']}>
               {author.bio[getLanguage(location.pathname)]}
-              <div className={styles['author__bio-portfolio']}>
+              {/* <div className={styles['author__bio-portfolio']}>
                 <a
                   href={author.contacts.portfolio.en}
                   rel="noopener noreferrer"
@@ -48,7 +49,7 @@ const Author = ({ language }) => {
                 >
                   {author.contacts.portfolio.en}
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         );

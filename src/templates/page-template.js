@@ -14,13 +14,13 @@ type Props = {
 };
 
 const PageTemplate = ({ data, pageContext }: Props) => {
-  const language = pageContext.slug.includes('/ja/') ? 'ja' : 'en';
+  const language = pageContext.slug.includes('/ko/') ? 'ko' : 'en';
   const siteTitle =
-    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleJa;
+    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleKo;
   const siteSubtitle =
     language === 'en'
       ? useSiteMetadata().subtitle
-      : useSiteMetadata().subtitleJa;
+      : useSiteMetadata().subtitleKo;
   const { html: pageBody } = data.markdownRemark;
   const {
     title: pageTitle,

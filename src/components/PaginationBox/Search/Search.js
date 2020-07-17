@@ -65,9 +65,9 @@ const Search = ({ currentPage, language, dates }: Props) => {
   const getLink = () => {
     let page = searchPage();
     if (!page) {
-      return language === 'en' ? '/' : '/ja';
+      return language === 'en' ? '/' : '/ko';
     }
-    return `/page/${searchPage()}${language === 'en' ? '' : '/ja'}`;
+    return `/page/${searchPage()}${language === 'en' ? '' : '/ko'}`;
   };
 
   const renderYearSelectBox = () => {

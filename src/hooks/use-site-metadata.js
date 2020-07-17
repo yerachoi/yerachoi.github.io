@@ -10,46 +10,32 @@ const useSiteMetadata = () => {
             author {
               name {
                 en
-                ja
+                ko
               }
               bio {
                 en
-                ja
+                ko
               }
-              photo
               contacts {
-                portfolio {
-                  en
-                  ja
-                }
                 github {
                   en
-                  ja
-                }
-                linkedin {
-                  en
-                  ja
-                }
-                rss {
-                  en
-                  ja
+                  ko
                 }
               }
             }
             menu {
               label {
                 en
-                ja
+                ko
               }
               path
             }
             url
             title
-            titleJa
+            titleKo
             subtitle
-            subtitleJa
+            subtitleKo
             copyright
-            disqusShortname
           }
         }
       }

@@ -25,21 +25,21 @@ const TagTemplate = ({ data, pageContext }: Props) => {
     language
   } = pageContext;
   const siteTitle =
-    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleJa;
+    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleKo;
   const siteSubtitle =
     language === 'en'
       ? useSiteMetadata().subtitle
-      : useSiteMetadata().subtitleJa;
+      : useSiteMetadata().subtitleKo;
 
   const { edges } = data.allMarkdownRemark;
   const pageTitle =
     currentPage > 0
       ? language === 'en'
         ? `All Posts tagged as "${tag}" - Page${currentPage} - ${siteTitle}`
-        : `"${tag}"タグのブログ - Page${currentPage} - ${siteTitle}`
+        : `"${tag}" 태그가 있는 모든 포스트 - Page${currentPage} - ${siteTitle}`
       : language === 'en'
       ? `All Posts tagged as "${tag}" - ${siteTitle}`
-      : `"${tag}"タグのブログ - ${siteTitle}`;
+      : `"${tag}" 태그가 있는 모든 포스트 - ${siteTitle}`;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
@@ -67,9 +67,9 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-        titleJa
+        titleKo
         subtitle
-        subtitleJa
+        subtitleKo
       }
     }
     allMarkdownRemark(

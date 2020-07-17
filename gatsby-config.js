@@ -8,9 +8,9 @@ module.exports = {
   siteMetadata: {
     url: siteConfig.url,
     title: siteConfig.title,
-    titleJa: siteConfig.titleJa,
+    titleKo: siteConfig.titleKo,
     subtitle: siteConfig.subtitle,
-    subtitleJa: siteConfig.subtitleJa,
+    subtitleKo: siteConfig.subtitleKo,
     copyright: siteConfig.copyright,
     disqusShortname: siteConfig.disqusShortname,
     menu: siteConfig.menu,

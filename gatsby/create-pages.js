@@ -18,10 +18,10 @@ const createPages = async ({ graphql, actions }) => {
     }
   });
   createPage({
-    path: '/search/ja',
+    path: '/search/ko',
     component: path.resolve('./src/templates/search-template.js'),
     context: {
-      language: 'ja'
+      language: 'ko'
     }
   });
 
@@ -32,9 +32,9 @@ const createPages = async ({ graphql, actions }) => {
     context: { language: 'en' }
   });
   createPage({
-    path: '/404/ja',
+    path: '/404/ko',
     component: path.resolve('./src/templates/not-found-template.js'),
-    context: { language: 'ja' }
+    context: { language: 'ko' }
   });
 
   // Tags list
@@ -44,9 +44,9 @@ const createPages = async ({ graphql, actions }) => {
     context: { language: 'en' }
   });
   createPage({
-    path: '/tags/ja',
+    path: '/tags/ko',
     component: path.resolve('./src/templates/tags-list-template.js'),
-    context: { language: 'ja' }
+    context: { language: 'ko' }
   });
 
   // Categories list
@@ -56,9 +56,9 @@ const createPages = async ({ graphql, actions }) => {
     context: { language: 'en' }
   });
   createPage({
-    path: '/categories/ja',
+    path: '/categories/ko',
     component: path.resolve('./src/templates/categories-list-template.js'),
-    context: { language: 'ja' }
+    context: { language: 'ko' }
   });
 
   // Posts and pages from markdown

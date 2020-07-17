@@ -77,8 +77,8 @@ module.exports = async (graphql, actions) => {
     });
   }
 
-  // ja
-  const resultJa = await graphql(`
+  // ko
+  const resultKo = await graphql(`
     {
       allMarkdownRemark(
         filter: {
@@ -86,7 +86,7 @@ module.exports = async (graphql, actions) => {
             template: { eq: "post" }
             draft: { ne: true }
             home: { ne: false }
-            language: { eq: "ja" }
+            language: { eq: "ko" }
           }
         }
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -103,47 +103,47 @@ module.exports = async (graphql, actions) => {
     }
   `);
 
-  const numPagesJa = Math.ceil(
-    resultJa.data.allMarkdownRemark.totalCount / postsPerPage
+  const numPagesKo = Math.ceil(
+    resultKo.data.allMarkdownRemark.totalCount / postsPerPage
   );
-  let datesJa = [];
+  let datesKo = [];
   if (postsPerPage === 1) {
-    resultJa.data.allMarkdownRemark.edges.forEach(edge => {
-      datesJa.push(edge.node.frontmatter.date);
+    resultKo.data.allMarkdownRemark.edges.forEach(edge => {
+      datesKo.push(edge.node.frontmatter.date);
     });
   } else {
-    let datesSetJa = [];
-    resultJa.data.allMarkdownRemark.edges.forEach((edge, index) => {
+    let datesSetKo = [];
+    resultKo.data.allMarkdownRemark.edges.forEach((edge, index) => {
       if (!(index % postsPerPage)) {
-        datesSetJa.push(edge.node.frontmatter.date);
+        datesSetKo.push(edge.node.frontmatter.date);
       } else if (!((index + 1) % postsPerPage)) {
-        datesSetJa.push(edge.node.frontmatter.date);
+        datesSetKo.push(edge.node.frontmatter.date);
       }
       if (
-        datesSetJa.length === 2 ||
-        index === resultJa.data.allMarkdownRemark.edges.length - 1
+        datesSetKo.length === 2 ||
+        index === resultKo.data.allMarkdownRemark.edges.length - 1
       ) {
-        datesJa.push(datesSetJa.slice());
-        datesSetJa.length = 0;
+        datesKo.push(datesSetKo.slice());
+        datesSetKo.length = 0;
       }
     });
   }
 
-  for (let i = 0; i < numPagesJa; i += 1) {
+  for (let i = 0; i < numPagesKo; i += 1) {
     createPage({
-      path: i === 0 ? '/ja' : `/page/${i}/ja`,
+      path: i === 0 ? '/ko' : `/page/${i}/ko`,
       component: path.resolve('./src/templates/index-template.js'),
       context: {
         currentPage: i,
-        totalPage: numPagesJa,
+        totalPage: numPagesKo,
         postsLimit: postsPerPage,
         postsOffset: i * postsPerPage,
-        prevPagePath: i <= 1 ? '/ja' : `/page/${i - 1}/ja`,
-        nextPagePath: `/page/${i + 1}/ja`,
+        prevPagePath: i <= 1 ? '/ko' : `/page/${i - 1}/ko`,
+        nextPagePath: `/page/${i + 1}/ko`,
         hasPrevPage: i !== 0,
-        hasNextPage: i !== numPagesJa - 1,
-        language: 'ja',
-        dates: datesJa
+        hasNextPage: i !== numPagesKo - 1,
+        language: 'ko',
+        dates: datesKo
       }
     });
   }

@@ -11,7 +11,7 @@ import useCategoriesPathList from '../../../hooks/use-categories-path-list';
 
 const LanguageSwitcher = ({ link, language, path }) => {
   const [enLinkExist, setEnLinkExist] = useState(null);
-  const [jaLinkExist, setJaLinkExist] = useState(null);
+  const [koLinkExist, setKoLinkExist] = useState(null);
   const tagsPathList = path.includes('/tag/') ? useTagsPathList() : null;
   const categoriesPathList = path.includes('/category/')
     ? useCategoriesPathList()
@@ -29,12 +29,12 @@ const LanguageSwitcher = ({ link, language, path }) => {
           path.includes('/tag/') ? tagsPathList : categoriesPathList
         )
       ) {
-        language === 'en' ? setJaLinkExist(true) : setEnLinkExist(true);
+        language === 'en' ? setKoLinkExist(true) : setEnLinkExist(true);
       }
       return;
     }
     if (language === 'en') {
-      setJaLinkExist(true);
+      setKoLinkExist(true);
     } else {
       setEnLinkExist(true);
     }
@@ -42,24 +42,24 @@ const LanguageSwitcher = ({ link, language, path }) => {
 
   const otherLanguagePath = (language, currentPath) => {
     if (currentPath.includes('/page/')) {
-      if (language === '/ja') {
+      if (language === '/ko') {
         return '/';
       }
-      return '/ja';
+      return '/ko';
     } else if (
       currentPath.includes('/category/') ||
       currentPath.includes('/tag/')
     ) {
       return getCorrespondingPath(currentPath);
     }
-    if (currentPath.includes('/ja')) {
-      return currentPath.replace('/ja', '');
+    if (currentPath.includes('/ko')) {
+      return currentPath.replace('/ko', '');
     }
-    return currentPath + '/ja';
+    return currentPath + '/ko';
   };
 
   const languageOnClick = (clickedLang, displayedLanguage) => {
-    if (clickedLang === displayedLanguage || (!enLinkExist && !jaLinkExist)) {
+    if (clickedLang === displayedLanguage || (!enLinkExist && !koLinkExist)) {
       return;
     }
     let path = '';
@@ -71,7 +71,7 @@ const LanguageSwitcher = ({ link, language, path }) => {
     } else {
       path = otherLanguagePath(language, location.pathname);
     }
-    ref.current.style.left = path.slice(-3) === '/ja' ? '50%' : '0';
+    ref.current.style.left = path.slice(-3) === '/ko' ? '50%' : '0';
     setTimeout(() => navigate(path), 30);
   };
 
@@ -81,7 +81,7 @@ const LanguageSwitcher = ({ link, language, path }) => {
         ? styles['language-switcher__languages__pointer']
         : styles['language-switcher__languages__unavailable'];
     }
-    return jaLinkExist
+    return koLinkExist
       ? styles['language-switcher__languages__pointer']
       : styles['language-switcher__languages__unavailable'];
   };
@@ -104,14 +104,14 @@ const LanguageSwitcher = ({ link, language, path }) => {
           A
         </span>
         <span
-          onClick={() => languageOnClick('ja', language)}
+          onClick={() => languageOnClick('ko', language)}
           className={`${
-            language === 'ja'
+            language === 'ko'
               ? styles['language-switcher__languages-active']
               : ''
-          } ${pointerClassName('ja')}`}
+          } ${pointerClassName('ko')}`}
         >
-          あ
+          한
         </span>
       </div>
     </div>

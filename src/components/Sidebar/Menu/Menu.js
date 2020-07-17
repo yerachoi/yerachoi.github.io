@@ -19,7 +19,7 @@ const Menu = ({ menu, language }: Props) => {
         {menu.map(item => (
           <li className={styles['menu__list-item']} key={item.path}>
             <Link
-              to={`${item.path}${language === 'en' ? '' : '/ja'}`}
+              to={`${item.path}${language === 'en' ? '' : '/ko'}`}
               className={styles['menu__list-item-link']}
               activeClassName={styles['menu__list-item-link--active']}
             >

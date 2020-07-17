@@ -1,20 +1,20 @@
 // @flow
 import { useStaticQuery, graphql } from 'gatsby';
 
-const useTagsListJa = () => {
+const useCategoriesListKo = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
-      query TagsListJaQuery {
+      query CategoriesListKoQuery {
         allMarkdownRemark(
           filter: {
             frontmatter: {
               template: { eq: "post" }
               draft: { ne: true }
-              language: { eq: "ja" }
+              language: { eq: "ko" }
             }
           }
         ) {
-          group(field: frontmatter___tags) {
+          group(field: frontmatter___category) {
             fieldValue
             totalCount
           }
@@ -26,4 +26,4 @@ const useTagsListJa = () => {
   return allMarkdownRemark.group;
 };
 
-export default useTagsListJa;
+export default useCategoriesListKo;

@@ -17,11 +17,11 @@ const PostTemplate = (props: Props) => {
   const { data, pageContext, location } = props;
   const { language, prev, next } = pageContext;
   const siteTitle =
-    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleJa;
+    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleKo;
   const siteSubtitle =
     language === 'en'
       ? useSiteMetadata().subtitle
-      : useSiteMetadata().subtitleJa;
+      : useSiteMetadata().subtitleKo;
   const {
     title: postTitle,
     description: postDescription
@@ -46,7 +46,7 @@ const PostTemplate = (props: Props) => {
   const stateForSearchPage = () => {
     if (
       location.state.from === '/search' ||
-      location.state.from === '/search/ja'
+      location.state.from === '/search/ko'
     ) {
       return {
         year: location.state.year,

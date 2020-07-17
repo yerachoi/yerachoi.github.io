@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import type { Edges } from '../../types';
 import BlogList from './BlogList';
 import styles from './Search.module.scss';
-import { useCategoriesList, useCategoriesListJa } from '../../hooks';
+import { useCategoriesList, useCategoriesListKo } from '../../hooks';
 
 type Props = {
   edges: Edges
@@ -11,7 +11,7 @@ type Props = {
 
 const Search = ({ edges, totalCount, language, savedFilter }: Props) => {
   const categoriesList =
-    language === 'ja' ? useCategoriesListJa() : useCategoriesList();
+    language === 'ko' ? useCategoriesListKo() : useCategoriesList();
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedTags, setSelectedTags] = useState('');
   const [tags, setTags] = useState([]);
@@ -190,7 +190,7 @@ const Search = ({ edges, totalCount, language, savedFilter }: Props) => {
       <div className={styles['search__filter__date-year']}>
         <select value={year} onChange={onYearSelect}>
           <option key="00" value="00">
-            {language === 'en' ? 'Year' : '年'}
+            {language === 'en' ? 'Year' : '년'}
           </option>
           {getBlogYears().map(year => {
             return (
@@ -265,14 +265,14 @@ const Search = ({ edges, totalCount, language, savedFilter }: Props) => {
       let value = i < 10 ? '0' + i.toString() : i.toString();
       options.push(
         <option key={value} value={value}>
-          {i + '月'}
+          {i + '월'}
         </option>
       );
     }
     return (
       <select value={month} onChange={onMonthSelect}>
         <option key="00" value="00">
-          月
+          월
         </option>
         {options.map(option => option)}
       </select>
@@ -283,7 +283,7 @@ const Search = ({ edges, totalCount, language, savedFilter }: Props) => {
     return (
       <div className={styles['search__filter__categories']}>
         <div className={styles['search__filter__categories-title']}>
-          <span>{language === 'en' ? 'Category' : 'カテゴリー'}</span>{' '}
+          <span>{language === 'en' ? 'Category' : '카테고리'}</span>{' '}
           {selectedCategory ? renderClearButton(onClickClearCategory) : null}
         </div>
         <ul className={styles['search__filter__categories-list']}>
@@ -313,7 +313,7 @@ const Search = ({ edges, totalCount, language, savedFilter }: Props) => {
     return (
       <div className={styles['search__filter__tags']}>
         <div className={styles['search__filter__tags-title']}>
-          <span>{language === 'en' ? 'Tags' : 'タグ'}</span>{' '}
+          <span>{language === 'en' ? 'Tags' : '태그'}</span>{' '}
           {selectedTags.length ? renderClearButton(clearTagFilter) : null}
         </div>
         <ul className={styles['search__filter__tags-list']}>
@@ -352,7 +352,7 @@ const Search = ({ edges, totalCount, language, savedFilter }: Props) => {
     return (
       <div>
         <span onClick={clearFilter} className={styles['search__filter__clear']}>
-          {language === 'en' ? '→ All posts' : '→ 全ブログ'}
+          {language === 'en' ? '→ All posts' : '→ 모든 포스트'}
         </span>
       </div>
     );
@@ -365,13 +365,13 @@ const Search = ({ edges, totalCount, language, savedFilter }: Props) => {
           ? number === 0
             ? language === 'en'
               ? 'No posts found'
-              : '該当ブログがありません'
+              : '포스트를 찾지 못했습니다'
             : language === 'en'
             ? `${number} post${number > 1 ? 's' : ''} found`
-            : `該当ブログ: ${number}件`
+            : `해당 포스트: ${number}건`
           : language === 'en'
           ? `${number} post${number > 1 ? 's' : ''}`
-          : `全${number}件`}
+          : `전체 ${number}건`}
       </div>
     );
   };
@@ -379,7 +379,7 @@ const Search = ({ edges, totalCount, language, savedFilter }: Props) => {
   return (
     <div className={styles['search']}>
       <h1 className={styles['search__title']}>
-        {language === 'en' ? 'Search' : '検索'}
+        {language === 'en' ? 'Search' : '검색'}
       </h1>
       <div className={styles['search__filter']}>
         <div className={styles['search__filter__date']}>

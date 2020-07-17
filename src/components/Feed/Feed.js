@@ -34,7 +34,7 @@ const Feed = ({ edges }: Props) => (
                 <span className={styles['feed__item-meta-category']}>
                   <Link
                     to={`${edge.node.fields.categorySlug}${
-                      language === 'en' ? '' : '/ja'
+                      language === 'en' ? '' : '/ko'
                     }`}
                     className={styles['feed__item-meta-category-link']}
                   >

@@ -37,8 +37,8 @@ const Post = (props: Props) => {
         <div className={styles['post__footer']}>
           <Meta date={date} language={language} />
           <div className={styles['post__footer-category']}>
-            {language === 'en' ? 'Category: ' : 'カテゴリー： '}
-            <Link to={`${categorySlug}${language === 'en' ? '' : '/ja'}`}>
+            {language === 'en' ? 'Category: ' : '카테고리： '}
+            <Link to={`${categorySlug}${language === 'en' ? '' : '/ko'}`}>
               {category}
             </Link>
           </div>
@@ -53,10 +53,10 @@ const Post = (props: Props) => {
           ) : null}
           <Link
             className={styles['post__home-button']}
-            to={backLink ? backLink : language === 'en' ? '/' : '/ja'}
+            to={backLink ? backLink : language === 'en' ? '/' : '/ko'}
             state={backLink ? stateForSearchPage : null}
           >
-            {language === 'en' ? '← Back' : '← もどる'}
+            {language === 'en' ? '← Back' : '← 뒤로'}
           </Link>
           <Pagination language={language} prev={prev} next={next} />
           <Author language={language} />

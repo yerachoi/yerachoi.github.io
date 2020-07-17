@@ -28,7 +28,7 @@ const Meta = ({ language, fields, frontmatter }: Props) => {
             <Icon icon={getIcon('category')} />
           </span>
           <Link
-            to={`${categorySlug}${language === 'en' ? '' : '/ja'}`}
+            to={`${categorySlug}${language === 'en' ? '' : '/ko'}`}
             className={styles['meta__category-link']}
           >
             {category}
@@ -44,7 +44,7 @@ const Meta = ({ language, fields, frontmatter }: Props) => {
               tagSlugs.map((slug, i) => (
                 <span className={styles['meta__tags-item']} key={tags[i]}>
                   <Link
-                    to={`${slug}${language === 'ja' ? '/ja' : ''}`}
+                    to={`${slug}${language === 'ko' ? '/ko' : ''}`}
                     className={styles['meta__tags-item-link']}
                   >
                     {tags[i]}

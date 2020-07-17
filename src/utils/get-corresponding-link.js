@@ -8,9 +8,9 @@ const categoriesEn = {
   'working abroad': '海外就労'
 };
 
-const categoriesJa = {};
+const categoriesKo = {};
 for (let key in categoriesEn) {
-  categoriesJa[categoriesEn[key]] = key;
+  categoriesKo[categoriesEn[key]] = key;
 }
 
 const tagsEn = {
@@ -24,9 +24,9 @@ const tagsEn = {
   introduction: '自己紹介'
 };
 
-const tagsJa = {};
+const tagsKo = {};
 for (let key in tagsEn) {
-  tagsJa[tagsEn[key].toString()] = key;
+  tagsKo[tagsEn[key].toString()] = key;
 }
 
 const getSplitPath = currentPath => {
@@ -39,18 +39,18 @@ const getSplitPath = currentPath => {
 const getCorrespondingPath = currentPath => {
   let path = getSplitPath(currentPath);
   if (path[0] === 'category') {
-    if (path[2] === 'ja') {
-      return `/category/${categoriesJa[path[1]]}`;
+    if (path[2] === 'ko') {
+      return `/category/${categoriesKo[path[1]]}`;
     } else {
-      return `/category/${categoriesEn[path[1]]}/ja`;
+      return `/category/${categoriesEn[path[1]]}/ko`;
     }
   }
 
   // Tag
-  if (path[2] === 'ja') {
-    return `/tag/${tagsJa[path[1]]}`;
+  if (path[2] === 'ko') {
+    return `/tag/${tagsKo[path[1]]}`;
   } else {
-    return `/tag/${tagsEn[path[1]]}/ja`;
+    return `/tag/${tagsEn[path[1]]}/ko`;
   }
 };
 

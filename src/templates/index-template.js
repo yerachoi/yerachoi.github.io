@@ -26,11 +26,11 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
   } = pageContext;
 
   const siteTitle =
-    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleJa;
+    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleKo;
   const siteSubtitle =
     language === 'en'
       ? useSiteMetadata().subtitle
-      : useSiteMetadata().subtitleJa;
+      : useSiteMetadata().subtitleKo;
 
   const { edges } = data.allMarkdownRemark;
   const pageTitle =

@@ -9,7 +9,7 @@ const RelatedPosts = ({ language, posts }: Props) => (
     <h3>
       {language === 'en'
         ? `Related ${posts.length === 1 ? 'post' : 'posts'}`
-        : '関連ブログ'}
+        : '관련 포스트'}
     </h3>
     <ul>
       {posts.map(post => {

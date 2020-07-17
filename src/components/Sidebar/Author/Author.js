@@ -19,7 +19,7 @@ const Author = ({ author, isIndex, language }: Props) => {
         <h1 className={styles['author__title']}>
           <Link
             className={styles['author__title-link']}
-            to={language === 'en' ? '/' : '/ja'}
+            to={language === 'en' ? '/' : '/ko'}
           >
             {author.name[language]}
           </Link>
@@ -28,7 +28,7 @@ const Author = ({ author, isIndex, language }: Props) => {
         <h2 className={styles['author__title']}>
           <Link
             className={styles['author__title-link']}
-            to={language === 'en' ? '/' : '/ja'}
+            to={language === 'en' ? '/' : '/ko'}
           >
             {author.name[language]}
           </Link>

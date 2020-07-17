@@ -16,13 +16,13 @@ type Props = {
 const SearchTemplate = ({ data, pageContext, location }: Props) => {
   const { language } = pageContext;
   const siteTitle =
-    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleJa;
+    language === 'en' ? useSiteMetadata().title : useSiteMetadata().titleKo;
   const siteSubtitle =
     language === 'en'
       ? useSiteMetadata().subtitle
-      : useSiteMetadata().subtitleJa;
+      : useSiteMetadata().subtitleKo;
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = `${language === 'en' ? 'Search' : '検索'} - ${siteTitle}`;
+  const pageTitle = `${language === 'en' ? 'Search' : '검색'} - ${siteTitle}`;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
