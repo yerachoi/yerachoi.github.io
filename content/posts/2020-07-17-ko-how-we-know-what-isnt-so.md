@@ -1,11 +1,11 @@
 ---
 title: "길로비치, \"인간 그 속기 쉬운 동물\"에 관해"
-date: "2020-07-17T12:00:00.000Z"
+date: "2020-07-17T18:00:00.000Z"
 template: "post"
 language: "ko"
 draft: false
-slug: "posts/how-we-know-what-isnt-so/ko"
-link: "posts/how-we-know-what-isnt-so"
+slug: "/posts/how-we-know-what-isnt-so/ko"
+link: "/posts/how-we-know-what-isnt-so"
 category: "읽기"
 tags:
   - "길로비치"

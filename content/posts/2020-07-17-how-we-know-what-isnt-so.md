@@ -1,11 +1,11 @@
 ---
 title: "On Gilovich's \"How We Know What Isn't So\""
-date: "2020-07-17T12:00:00.000Z"
+date: "2020-07-17T18:00:00.000Z"
 template: "post"
 language: "en"
 draft: false
-slug: "posts/how-we-know-what-isnt-so"
-link: "posts/how-we-know-what-isnt-so/ko"
+slug: "/posts/how-we-know-what-isnt-so"
+link: "/posts/how-we-know-what-isnt-so/ko"
 category: "read"
 tags:
   - "Gilovich"
